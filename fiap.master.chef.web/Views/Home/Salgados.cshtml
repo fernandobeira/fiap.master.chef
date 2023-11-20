@@ -1,0 +1,38 @@
+﻿@using fiap.master.chef.core.Models;
+@model IEnumerable<Receita>
+
+@{
+    ViewData["Title"] = "Salgados";
+}
+
+<div class="container mt-5">
+
+    <h1>@ViewData["Title"]</h1>
+
+    <div class="row mt-5 mb-5">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-3 mb-5">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/receitas/@item.Foto" class="card-img-top" alt="">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Titulo</h5>
+                        <p class="card-text">@item.Descricao</p>
+                       
+                        <a asp-action="Detalhe"
+                           asp-route-id="@item.Id"
+                           class="btn btn-primary">Hummmm!
+                       </a>
+
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+</div>

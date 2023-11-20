@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="master-chef-carousel" class="carousel slide" data-bs-ride="carousel">
+
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#master-chef-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#master-chef-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#master-chef-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#master-chef-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+
+
+    <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+            <img src="~/images/carousel/doces.jpg" class="img-carousel d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+                <p class="mt-5 fs-3 text-uppercase">Doces para toda família</p>
+                <h1 class="display-1 fw-bolder text-capitalize">Delícias Fáceis de Fazer</h1>
+                <a asp-controller="Home" asp-action="Doces" class="btn btn-primary px-4 py-2 fs-5 mt-5">Quero Aprender!</a>
+            </div>
+        </div>
+        <div class="carousel-item c-item">
+            <img src="~/images/carousel/lanches.jpg" class="img-carousel d-block w-100 c-img" alt="Slide 2">
+            <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+                <p class="mt-5 fs-3 text-uppercase">Lanches de dar água na Boca</p>
+                <h1 class="display-1 fw-bolder text-capitalize">Lanches Gourmets Deliciosos</h1>
+                <a asp-controller="Home" asp-action="Salgados" class="btn btn-primary px-4 py-2 fs-5 mt-5">Quero Aprender!</a>
+            </div>
+        </div>
+        <div class="carousel-item c-item">
+            <img src="~/images/carousel/salgados.jpg" class="img-carousel d-block w-100 c-img" alt="Slide 3">
+            <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+                <p class="mt-5 fs-3 text-uppercase">Salgados irresistíveis</p>
+                <h1 class="display-1 fw-bolder text-capitalize">Salgados para Festas e Eventos</h1>
+                <a asp-controller="Home" asp-action="Salgados" class="btn btn-primary px-4 py-2 fs-5 mt-5">Quero Aprender!</a>
+            </div>
+        </div>
+        <div class="carousel-item c-item">
+            <img src="~/images/carousel/sobremesas.jpg" class="img-carousel d-block w-100 c-img" alt="Slide 4">
+            <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+                <p class="mt-5 fs-3 text-uppercase">Sobremesas para todos os gostos</p>
+                <h1 class="display-1 fw-bolder text-capitalize">Sobremesas de chefs michelin</h1>
+                <a asp-controller="Home" asp-action="Doces" class="btn btn-primary px-4 py-2 fs-5 mt-5">Quero Aprender!</a>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#master-chef-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#master-chef-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+</div>
+
+<div class="container">
+
+    @await Component.InvokeAsync("Receita", new { total = 1, categoria = "Doce"})
+
+</div>

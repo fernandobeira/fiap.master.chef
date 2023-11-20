@@ -1,0 +1,116 @@
+﻿@using fiap.master.chef.core.Models;
+@model Receita
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<div class="container mt-5">
+
+    <h1>@Model.Titulo</h1>
+
+    <div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <img class="c-img-detalhe" src="~/images/receitas/@Model.Foto" />
+            </div>
+        </div>
+
+        <hr />
+
+        <dl class="row">
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Titulo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Titulo)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Descricao)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
+            <dt class="col-sm-2">Modo de Preparo</dt>
+
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ModoDePreparo)
+            </dd>
+
+        </dl>
+
+    </div>
+
+    <h2>Ingredientes</h2>
+    <hr />
+    <div>
+
+        <dl class="row">
+
+            @{
+
+                foreach (var item in Model.Ingredientes)
+                {
+                    <dt class="col-sm-1">
+                        Produto
+                    </dt>
+                    <dd class="col-sm-3">
+                        @item.Nome
+                    </dd>
+
+                    <dt class="col-sm-1">
+                        Quantidade
+                    </dt>
+                    <dd class="col-sm-3">
+                        @item.Quantidade
+                    </dd>
+
+                    <dt class="col-sm-1">
+                        Unidade
+                    </dt>
+                    <dd class="col-sm-3">
+                        @item.Unidade
+                    </dd>
+
+                }
+            }
+
+        </dl>
+
+        <h4>Tags</h4>
+        <hr />
+        <div>
+
+            <dl class="row">
+
+                @{
+
+                    foreach (var item in Model.Tags)
+                    {
+                        <dt class="col-sm-1">
+                            Nome
+                        </dt>
+                        <dd class="col-sm-11">
+                            @item.Nome
+                        </dd>
+                    }
+                }
+
+            </dl>
+
+        </div>
+
+        <div>
+
+            <a asp-controller="Home" 
+               asp-action="Index" 
+               class="btn btn-primary">
+               Voltar
+            </a>
+
+        </div>
+
+
+    </div>
