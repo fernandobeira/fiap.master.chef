@@ -1,0 +1,111 @@
+﻿@model fiap.master.chef.core.Models.Receita
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+
+    <h1>Create</h1>
+
+    <h4>Receita</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-12">
+
+
+            <div class="form-group mt-1">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control txtTituloReceita" />
+            </div>
+
+            <div class="form-group mt-1">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control txtDescrReceita" />
+            </div>
+
+            <div class="form-group mt-1">
+                <label asp-for="ModoDePreparo" class="control-label">Modo De Preparo</label>
+                <input asp-for="ModoDePreparo" class="form-control txtModoPrepReceita" />
+            </div>
+
+            <div class="form-group mt-1">
+                <label asp-for="Foto" class="control-label"></label>
+                <input asp-for="Foto" class="form-control txtFotoReceita" />
+            </div>
+
+            <div class="form-group mt-1">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control txtCategoriaReceita" />
+            </div>
+
+        </div>
+    </div>
+
+    <h4 class="mt-3">Ingredientes</h4>
+    <hr />
+
+    <div id="template-ingredientes">
+
+        <div class="row">
+            <div class="col-md-12 alert alert-warning">
+                Incluir os ingredientes, quantidades e unidade de forma respectiva separados por vírgula.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group mt-1">
+                    <label class="control-label">Nome</label>
+                    <input placeholder="Ex.: Ingrediente 1, Ingrediente 2, Ingrediente 3" class="form-control txtNomeIngrediente" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group mt-1">
+                    <label class="control-label">Quantidade</label>
+                    <input placeholder="Ex.: 1, 200, 3" class="form-control txtQtdeIngrediente" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group mt-1">
+                    <label class="control-label">Unidade</label>
+                    <input placeholder="Ex.: Un, Fatia, Gramas" class="form-control txtUnidadeIngrediente" />
+                    <span class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <h4 class="mt-3">Tags</h4>
+    <hr />
+
+    <div id="template-tags">
+
+        <div class="row">
+            <div class="col-md-12 alert alert-warning">
+                Incluir as tags, separados por vírgula.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="form-group mt-1">
+                    <label class="control-label">Nome</label>
+                    <input placeholder="Ex.: Muito Bom, Gostoso" class="form-control txtNomeTag" />
+                    <span class="text-danger"></span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group mt-4">
+        <input id="btnCreate" value="Create" class="btn btn-primary" />
+        <input id="btnLimpar" value="Limpar" class="btn btn-primary" />
+    </div>
+
+
+</div>
